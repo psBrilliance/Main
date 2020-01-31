@@ -1,0 +1,5 @@
+Param(
+    [Parameter(Mandatory=$true)][String]$vmName
+)
+
+Get-VM -Name $vmName | Get-NetworkAdapter | Set-NetworkAdapter -type "vmxnet3"
