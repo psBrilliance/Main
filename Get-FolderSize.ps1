@@ -1,6 +1,5 @@
 Param(
-    [Parameter(Mandatory=$true)][String]$folderPath
+    [Parameter(Mandatory=$true)][String]$Path
 )
 
-$folerSize = (gci $folderPath | Measure-Object -Property Length -Sum) 
-"{0:N2}" -f ($folerSize.Sum / 1MB) + " MB"
+"{0:N2}" -f ((gci -Path $Path -Recurse -File | % {$_.Length} | Measure-Object -Sum).Sum / 1MB) + " MB"
