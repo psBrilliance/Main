@@ -18,7 +18,7 @@ Function Initialize-JobQueue {
             }
         }
 
-        foreach ($job in @(Get-job | where {$_.State -eq 'Completed'})) {
+        foreach ($job in @(Get-job | ? {$_.State -eq 'Completed'})) {
             Write-Host "Receiving job $($job.location)" -ForegroundColor DarkGreen
             Receive-Job $job
                         
