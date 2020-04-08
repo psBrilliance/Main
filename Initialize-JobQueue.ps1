@@ -18,7 +18,7 @@ Function Initialize-JobQueue {
             }
         }
 
-        foreach ($job in @(Get-job | ? {$_.State -eq 'Completed'})) {
+        foreach ($job in @(Get-job | where {$_.State -eq 'Completed'})) {
             Write-Host "Receiving job $($job.location)" -ForegroundColor DarkGreen
             Receive-Job $job
                         
@@ -36,7 +36,7 @@ Function Initialize-JobQueue {
             Write-Progress -Activity 'Processing jobs..' -Status $collection[$i] -Id 123 -PercentComplete ($i/($collection.count/100))
             
             while ((Get-Job).Count -eq $maxjobs) {
-                $results += Start-JobThrottle
+                $results += Start-JobQueue
             }
             if ((Get-Job).Count -lt $maxjobs) {
                 Write-Host "Starting job $i" -ForegroundColor DarkCyan
@@ -45,7 +45,7 @@ Function Initialize-JobQueue {
       }
       
         while ((Get-Job).Count -gt 0) {
-            $results += Start-JobThrottle
+            $results += Start-JobQueue
             
             if ((Get-Job).Count -gt 0) {
                   Start-Sleep -Seconds 3
