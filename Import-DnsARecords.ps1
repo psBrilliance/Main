@@ -10,7 +10,7 @@ $hostlist = Import-Csv $CsvPath
     Import-Module DnsServer
     
     foreach ($dnshost in $using:hostlist) {
-        Add-DnsServerResourceRecordA -Name $dnshost.host -ZoneName "knunke.com" -IPv4Address $dnshost.ip -ComputerName $dnsServer
+        Add-DnsServerResourceRecordA -Name $dnshost.host -ZoneName "psBrilliance" -IPv4Address $dnshost.ip -ComputerName $dnsServer
     }
 }
 
