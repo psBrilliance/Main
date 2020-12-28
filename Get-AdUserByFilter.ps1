@@ -3,4 +3,4 @@ Param(
 )
 
 Import-Module ActiveDirectory
-Get-ADUser -Filter * -Server "KNUNKE.COM" -Properties EmailAddress | ? {$_.Name -match $SearchFilter -or $_.EmailAddress -match $SearchFilter} | Select Name, EmailAddress, UserPrincipalName
+Get-ADUser -Filter * -Server "psBrilliance.com" -Properties EmailAddress | ? {$_.Name -match $SearchFilter -or $_.EmailAddress -match $SearchFilter} | Select Name, EmailAddress, UserPrincipalName
