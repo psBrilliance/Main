@@ -9,7 +9,7 @@ $websites = @(
     'https://www.costco.com/sony-playstation-5-gaming-console-bundle.product.100691489.html'
     'https://www.gamestop.com/video-games/playstation-5/consoles/products/playstation-5/11108140.html?condition=New'
     'https://www.walmart.com/ip/PlayStation-5-Console/363472942'
-    #'https://direct.playstation.com/en-us/consoles/console/playstation5-console.3005816'
+    'https://direct.playstation.com/en-us/consoles/console/playstation5-console.3005816'
 )
 $driver = Start-SeChrome
 
