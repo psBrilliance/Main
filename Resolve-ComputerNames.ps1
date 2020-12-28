@@ -4,6 +4,6 @@ Param(
 )
 
 1..$range | % {
-    if ($_ -lt 10) {Resolve-DnsName -Name "$($computerName)0$($_).KNUNKE.COM" | Select Name, IPAddress}
-    else {Resolve-DnsName -Name "$($computerName)$($_).KNUNKE.COM" | Select Name, IPAddress}
+    if ($_ -lt 10) {Resolve-DnsName -Name "$($computerName)0$($_).psBrilliance.com" | Select Name, IPAddress}
+    else {Resolve-DnsName -Name "$($computerName)$($_).psBrilliance.com" | Select Name, IPAddress}
 }
