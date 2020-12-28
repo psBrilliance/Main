@@ -1,4 +1,4 @@
-$computers = Get-Content "C:\CTX\Tasks\Get-PilotUpdates\knunke pilot.txt"
+$computers = Get-Content "C:\CTX\Tasks\Get-PilotUpdates\psBrilliance pilot.txt"
 
 $payload = {
     Function Get-DotNetVersion {
