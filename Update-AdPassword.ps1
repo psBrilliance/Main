@@ -1,4 +1,4 @@
-$Domain = 'psBrilliance'
+$Domain = 'psBrilliance.com'
 $UserToChange = 'admin'
 $newPwd = 'pwnz0red'
 $oldPwd = 'iForgot'
