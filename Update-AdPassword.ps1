@@ -1,5 +1,5 @@
-$Domain = 'knunke.com'
-$UserToChange = 'knunke'
+$Domain = 'psBrilliance'
+$UserToChange = 'admin'
 $newPwd = 'pwnz0red'
 $oldPwd = 'iForgot'
 
